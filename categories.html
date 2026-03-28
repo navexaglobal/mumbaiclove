@@ -52,56 +52,66 @@
 
   <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-10 w-full">
     <h1 class="font-display text-4xl font-extrabold text-chili-900 text-center">Shop by category</h1>
-    <p class="text-center text-stone-600 mt-2 max-w-xl mx-auto">Pick a lane — each page opens the menu with the right filter applied.</p>
+    <p class="text-center text-stone-600 mt-2 max-w-xl mx-auto">Each card opens the shop with the matching filter — spices, blends, flours, or mixes.</p>
 
-    <div class="grid md:grid-cols-3 gap-8 mt-14">
-      <!-- Chicken -->
+    <div class="grid sm:grid-cols-2 gap-8 mt-14">
       <section class="rounded-3xl overflow-hidden bg-white shadow-xl border border-amber-100 hover:shadow-2xl transition-shadow duration-300">
-        <a href="menu.html?protein=chicken" class="block aspect-[16/10] overflow-hidden group">
-          <img src="https://images.unsplash.com/photo-1598515214211-90d0c896d29b?w=800&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="500">
+        <a href="menu.html?category=powders" class="block aspect-[16/10] overflow-hidden group">
+          <img src="images/products/mc-06.png" alt="" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="800" height="500">
         </a>
         <div class="p-6">
-          <h2 class="font-display text-2xl font-bold text-chili-800">Chicken</h2>
-          <p class="text-stone-600 text-sm mt-2 leading-relaxed">Tandoori, curries, and biryani built on yogurt marinades and slow layers of masala.</p>
-          <p class="text-xs text-fresh-700 font-bold mt-3" id="count-chicken"></p>
-          <a href="menu.html?protein=chicken" class="mt-5 inline-flex items-center font-bold text-turmeric-600 hover:text-chili-700 transition-colors">View chicken menu →</a>
+          <h2 class="font-display text-2xl font-bold text-chili-800">Spice powders</h2>
+          <p class="text-stone-600 text-sm mt-2 leading-relaxed">Turmeric, Kashmiri chili, laal tikhat, and everyday ground spices.</p>
+          <p class="text-xs text-fresh-700 font-bold mt-3" id="count-powders"></p>
+          <a href="menu.html?category=powders" class="mt-5 inline-flex items-center font-bold text-turmeric-600 hover:text-chili-700 transition-colors">View spice powders →</a>
         </div>
       </section>
 
-      <!-- Veg -->
       <section class="rounded-3xl overflow-hidden bg-white shadow-xl border border-amber-100 hover:shadow-2xl transition-shadow duration-300">
-        <a href="menu.html?protein=veg" class="block aspect-[16/10] overflow-hidden group">
-          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="500">
+        <a href="menu.html?category=blends" class="block aspect-[16/10] overflow-hidden group">
+          <img src="images/products/mc-09.png" alt="" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="800" height="500">
         </a>
         <div class="p-6">
-          <h2 class="font-display text-2xl font-bold text-chili-800">Vegetarian</h2>
-          <p class="text-stone-600 text-sm mt-2 leading-relaxed">Paneer, dal, thalis, and regional veg classics — no compromise on richness.</p>
-          <p class="text-xs text-fresh-700 font-bold mt-3" id="count-veg"></p>
-          <a href="menu.html?protein=veg" class="mt-5 inline-flex items-center font-bold text-turmeric-600 hover:text-chili-700 transition-colors">View veg menu →</a>
+          <h2 class="font-display text-2xl font-bold text-chili-800">Masala blends</h2>
+          <p class="text-stone-600 text-sm mt-2 leading-relaxed">Garam masala, Goda, Agri Koli, and regional whole-spice mixes.</p>
+          <p class="text-xs text-fresh-700 font-bold mt-3" id="count-blends"></p>
+          <a href="menu.html?category=blends" class="mt-5 inline-flex items-center font-bold text-turmeric-600 hover:text-chili-700 transition-colors">View blends →</a>
         </div>
       </section>
 
-      <!-- Combos -->
-      <section class="rounded-3xl overflow-hidden bg-white shadow-xl border border-amber-100 hover:shadow-2xl transition-shadow duration-300 md:col-span-1">
-        <a href="menu.html?category=combos" class="block aspect-[16/10] overflow-hidden group">
-          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=800&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="500">
+      <section class="rounded-3xl overflow-hidden bg-white shadow-xl border border-amber-100 hover:shadow-2xl transition-shadow duration-300">
+        <a href="menu.html?category=flours" class="block aspect-[16/10] overflow-hidden group">
+          <img src="images/products/mc-18.png" alt="" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="800" height="500">
         </a>
         <div class="p-6">
-          <h2 class="font-display text-2xl font-bold text-chili-800">Combos</h2>
-          <p class="text-stone-600 text-sm mt-2 leading-relaxed">Complete meals: gravies + breads + sides + drinks where listed — built for families and offices.</p>
-          <p class="text-xs text-fresh-700 font-bold mt-3" id="count-combos"></p>
-          <a href="menu.html?category=combos" class="mt-5 inline-flex items-center font-bold text-turmeric-600 hover:text-chili-700 transition-colors">View combos →</a>
+          <h2 class="font-display text-2xl font-bold text-chili-800">Flours & bhajani</h2>
+          <p class="text-stone-600 text-sm mt-2 leading-relaxed">Thalipith bhajani, rajgira, modak flour, ghavan, nachni, and more.</p>
+          <p class="text-xs text-fresh-700 font-bold mt-3" id="count-flours"></p>
+          <a href="menu.html?category=flours" class="mt-5 inline-flex items-center font-bold text-turmeric-600 hover:text-chili-700 transition-colors">View flours →</a>
+        </div>
+      </section>
+
+      <section class="rounded-3xl overflow-hidden bg-white shadow-xl border border-amber-100 hover:shadow-2xl transition-shadow duration-300">
+        <a href="menu.html?category=mixes" class="block aspect-[16/10] overflow-hidden group">
+          <img src="images/products/mc-15.png" alt="" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="800" height="500">
+        </a>
+        <div class="p-6">
+          <h2 class="font-display text-2xl font-bold text-chili-800">Instant mixes</h2>
+          <p class="text-stone-600 text-sm mt-2 leading-relaxed">Fusion masala, Malwani vade, upwas bhajani — quick cooking helpers.</p>
+          <p class="text-xs text-fresh-700 font-bold mt-3" id="count-mixes"></p>
+          <a href="menu.html?category=mixes" class="mt-5 inline-flex items-center font-bold text-turmeric-600 hover:text-chili-700 transition-colors">View mixes →</a>
         </div>
       </section>
     </div>
 
-    <nav class="mt-14 rounded-2xl bg-gradient-to-r from-turmeric-500/20 via-orange-500/15 to-chili-600/20 border border-amber-200 p-6 md:p-8" aria-label="Course shortcuts">
-      <h3 class="font-display font-bold text-lg text-chili-900 mb-4">Also browse by course</h3>
+    <nav class="mt-14 rounded-2xl bg-gradient-to-r from-turmeric-500/20 via-orange-500/15 to-chili-600/20 border border-amber-200 p-6 md:p-8" aria-label="Shortcuts">
+      <h3 class="font-display font-bold text-lg text-chili-900 mb-4">Quick links</h3>
       <div class="flex flex-wrap gap-3">
-        <a href="menu.html?category=starters" class="px-4 py-2 rounded-xl bg-white border border-amber-200 font-semibold text-sm hover:border-turmeric-500 transition-colors">Starters</a>
-        <a href="menu.html?category=mains" class="px-4 py-2 rounded-xl bg-white border border-amber-200 font-semibold text-sm hover:border-turmeric-500 transition-colors">Main course</a>
-        <a href="menu.html?category=desserts" class="px-4 py-2 rounded-xl bg-white border border-amber-200 font-semibold text-sm hover:border-turmeric-500 transition-colors">Desserts</a>
-        <a href="menu.html" class="px-4 py-2 rounded-xl bg-chili-700 text-white font-semibold text-sm hover:bg-chili-600 transition-colors">Full menu</a>
+        <a href="menu.html?category=powders" class="px-4 py-2 rounded-xl bg-white border border-amber-200 font-semibold text-sm hover:border-turmeric-500 transition-colors">Powders</a>
+        <a href="menu.html?category=blends" class="px-4 py-2 rounded-xl bg-white border border-amber-200 font-semibold text-sm hover:border-turmeric-500 transition-colors">Blends</a>
+        <a href="menu.html?category=flours" class="px-4 py-2 rounded-xl bg-white border border-amber-200 font-semibold text-sm hover:border-turmeric-500 transition-colors">Flours</a>
+        <a href="menu.html?category=mixes" class="px-4 py-2 rounded-xl bg-white border border-amber-200 font-semibold text-sm hover:border-turmeric-500 transition-colors">Mixes</a>
+        <a href="menu.html" class="px-4 py-2 rounded-xl bg-chili-700 text-white font-semibold text-sm hover:bg-chili-600 transition-colors">Full shop</a>
       </div>
     </nav>
   </main>
@@ -112,16 +122,14 @@
   <script>
     function bootCategories() {
       const { filterProducts } = window.MumbaiCloveApp;
-      const c = filterProducts(null, "chicken").length;
-      const v = filterProducts(null, "veg").length;
-      const b = filterProducts("combos", null).length;
-      const el = (id, n, label) => {
+      const el = (id, n) => {
         const e = document.getElementById(id);
-        if (e) e.textContent = n + " " + label + " on menu";
+        if (e) e.textContent = n + " products";
       };
-      el("count-chicken", c, "items");
-      el("count-veg", v, "items");
-      el("count-combos", b, "items");
+      el("count-powders", filterProducts("powders", null).length);
+      el("count-blends", filterProducts("blends", null).length);
+      el("count-flours", filterProducts("flours", null).length);
+      el("count-mixes", filterProducts("mixes", null).length);
     }
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", bootCategories);

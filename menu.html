@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu — MumbaiClove</title>
+  <title>Shop — MumbaiClove</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,37 +52,28 @@
 
   <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-10 w-full">
     <div class="text-center max-w-2xl mx-auto mb-10">
-      <h1 class="font-display text-4xl font-extrabold text-chili-900">Full menu</h1>
-      <p class="text-stone-600 mt-2">Search, filter, and add to cart — checkout happens on WhatsApp.</p>
+      <h1 class="font-display text-4xl font-extrabold text-chili-900">Shop all products</h1>
+      <p class="text-stone-600 mt-2">Spices, blends, flours, and mixes — add to cart and confirm on WhatsApp.</p>
     </div>
 
     <!-- Search -->
     <div class="max-w-xl mx-auto mb-8">
-      <label class="sr-only" for="menu-search">Search dishes</label>
+      <label class="sr-only" for="menu-search">Search products</label>
       <div class="relative">
         <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <input type="search" id="menu-search" placeholder="Search biryani, paneer, combo…" class="w-full pl-12 pr-4 py-3.5 rounded-2xl border-2 border-amber-200 bg-white shadow-sm focus:border-turmeric-500 focus:ring-2 focus:ring-turmeric-500/30 outline-none transition-all">
+        <input type="search" id="menu-search" placeholder="Search masala, haldi, bhajani, modak…" class="w-full pl-12 pr-4 py-3.5 rounded-2xl border-2 border-amber-200 bg-white shadow-sm focus:border-turmeric-500 focus:ring-2 focus:ring-turmeric-500/30 outline-none transition-all">
       </div>
     </div>
 
-    <!-- Category + protein filters -->
-    <div class="flex flex-col gap-4 mb-10">
-      <div class="flex flex-wrap justify-center gap-2" id="filter-category" role="tablist" aria-label="Course type">
-        <button type="button" data-filter-cat="all" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">All</button>
-        <button type="button" data-filter-cat="starters" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">Starters</button>
-        <button type="button" data-filter-cat="mains" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">Main course</button>
-        <button type="button" data-filter-cat="combos" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">Combos</button>
-        <button type="button" data-filter-cat="desserts" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">Desserts</button>
-      </div>
-      <div class="flex flex-wrap justify-center gap-2" id="filter-protein" role="tablist" aria-label="Protein style">
-        <button type="button" data-filter-protein="all" class="filter-protein px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-fresh-600">All proteins</button>
-        <button type="button" data-filter-protein="chicken" class="filter-protein px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-fresh-600">Chicken</button>
-        <button type="button" data-filter-protein="veg" class="filter-protein px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-fresh-600">Veg</button>
-        <button type="button" data-filter-protein="combos" class="filter-protein px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-fresh-600">Combo meals</button>
-      </div>
+    <div class="flex flex-wrap justify-center gap-2 mb-10" id="filter-category" role="tablist" aria-label="Product type">
+      <button type="button" data-filter-cat="all" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">All</button>
+      <button type="button" data-filter-cat="powders" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">Spice powders</button>
+      <button type="button" data-filter-cat="blends" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">Masala blends</button>
+      <button type="button" data-filter-cat="flours" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">Flours & bhajani</button>
+      <button type="button" data-filter-cat="mixes" class="filter-cat px-4 py-2 rounded-full font-semibold text-sm border-2 transition-all bg-white border-amber-200 hover:border-turmeric-500">Instant mixes</button>
     </div>
 
-    <p id="menu-empty" class="hidden text-center py-16 text-stone-500 font-medium">No dishes match your filters. Try clearing search or switching category.</p>
+    <p id="menu-empty" class="hidden text-center py-16 text-stone-500 font-medium">No products match your filters. Try clearing search or switching category.</p>
     <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </main>
 
@@ -102,11 +93,6 @@
 
       let searchQuery = "";
       let activeCat = getQueryParam("category") || "all";
-      let activeProtein = getQueryParam("protein") || "all";
-      if (activeProtein === "combos") {
-        activeCat = "combos";
-        activeProtein = "all";
-      }
 
       const grid = document.getElementById("menu-grid");
       const empty = document.getElementById("menu-empty");
@@ -125,22 +111,10 @@
           btn.classList.toggle("border-amber-200", !on);
           btn.classList.toggle("bg-white", !on);
         });
-        document.querySelectorAll(".filter-protein").forEach((btn) => {
-          const v = btn.getAttribute("data-filter-protein");
-          const on = v === activeProtein;
-          btn.classList.toggle("bg-fresh-600", on);
-          btn.classList.toggle("text-white", on);
-          btn.classList.toggle("border-fresh-600", on);
-          btn.classList.toggle("border-amber-200", !on);
-          btn.classList.toggle("bg-white", !on);
-        });
       }
 
       function currentList() {
-        let list = filterProducts(
-          activeCat === "all" ? null : activeCat,
-          activeProtein === "all" ? null : activeProtein
-        );
+        let list = filterProducts(activeCat === "all" ? null : activeCat, null);
         if (searchQuery) list = list.filter((p) => searchProducts(searchQuery).includes(p));
         return list;
       }
@@ -159,25 +133,13 @@
         const url = new URL(window.location.href);
         if (activeCat !== "all") url.searchParams.set("category", activeCat);
         else url.searchParams.delete("category");
-        if (activeProtein !== "all") url.searchParams.set("protein", activeProtein);
-        else url.searchParams.delete("protein");
+        url.searchParams.delete("protein");
         window.history.replaceState({}, "", url.pathname + url.search);
       }
 
       document.querySelectorAll(".filter-cat").forEach((btn) => {
         btn.addEventListener("click", () => {
           activeCat = btn.getAttribute("data-filter-cat") || "all";
-          applyFilterClasses();
-          render();
-        });
-      });
-      document.querySelectorAll(".filter-protein").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          activeProtein = btn.getAttribute("data-filter-protein") || "all";
-          if (activeProtein === "combos") {
-            activeCat = "combos";
-            activeProtein = "all";
-          }
           applyFilterClasses();
           render();
         });

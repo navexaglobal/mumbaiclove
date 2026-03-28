@@ -7,168 +7,222 @@
 const BUSINESS = {
   name: "MumbaiClove",
   whatsappCountryCode: "91", // India; no +
-  whatsappNumber: "9876543210", // Replace with your number (digits only)
-  phoneDisplay: "+91 98765 43210",
-  address: "12 Spice Market Lane, Connaught Place, New Delhi 110001",
-  email: "hello@mumbaiclove.example",
-  upiId: "yourname@paytm", // Replace with your UPI ID
-};
+  whatsappNumber: "9224719600", // Replace with your number (digits only)
+  phoneDisplay: "+91 9224719600",
+  address: "601 Himalay Apartment, chendani koliwada, Thane east mumbai 400603",
+  email: "",
+  upiId: "vaishalikoli10@okaxis",
+};  
 
 /** @type {Array<{id:string,name:string,price:number,category:string,protein:string,description:string,ingredients:string[],image:string,badges:string[],youtubeId:string|null,featured?:boolean}>} */
 const PRODUCTS = [
   {
-    id: "mr-001",
-    name: "Tandoori Chicken Platter",
-    price: 449,
-    category: "starters",
-    protein: "chicken",
-    description: "Charcoal-smoked drumsticks with mint chutney and onion rings.",
-    ingredients: ["Chicken", "Yogurt", "Kashmiri chili", "Garam masala", "Lemon"],
-    image: "https://images.unsplash.com/photo-1598515214211-90d0c896d29b?w=800&q=80",
-    badges: ["bestseller", "spicy"],
-    youtubeId: "1Q8fG0TtVAY",
-    featured: true,
-  },
-  {
-    id: "mr-002",
-    name: "Paneer Tikka Skewers",
-    price: 329,
-    category: "starters",
+    id: "mc-001",
+    name: "Authentic Garam Masala",
+    price: 199,
+    category: "blends",
     protein: "veg",
-    description: "Cottage cheese cubes, bell peppers, and tikka masala marinade.",
-    ingredients: ["Paneer", "Capsicum", "Yogurt", "Ajwain", "Kasuri methi"],
-    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&q=80",
-    badges: ["veg", "new"],
-    youtubeId: "nCb6JnHLa3g",
-    featured: true,
-  },
-  {
-    id: "mr-003",
-    name: "Hyderabadi Chicken Biryani",
-    price: 389,
-    category: "mains",
-    protein: "chicken",
-    description: "Long-grain basmati, saffron notes, and slow-cooked spiced chicken.",
-    ingredients: ["Basmati rice", "Chicken", "Saffron", "Fried onion", "Mint"],
-    image: "https://images.unsplash.com/photo-1563379091339-03246963d4b7?w=800&q=80",
-    badges: ["bestseller"],
-    youtubeId: "VYcwPWr6L3Y",
-    featured: true,
-  },
-  {
-    id: "mr-004",
-    name: "Dal Makhani Bowl",
-    price: 249,
-    category: "mains",
-    protein: "veg",
-    description: "Creamy black lentils simmered overnight with butter and tomato.",
-    ingredients: ["Urad dal", "Tomato", "Butter", "Cream", "Kasuri methi"],
-    image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80",
-    badges: ["veg"],
+    description:
+      "Aromatic whole-spice blend with star anise, cinnamon, green cardamom, nutmeg, bay leaf, and cumin. Natural colour, no preservatives — best within six months of packing.",
+    ingredients: ["Star anise", "Cinnamon", "Green cardamom", "Nutmeg", "Bay leaf", "Cumin"],
+    image: "images/products/mc-09.png",
+    badges: ["bestseller", "natural"],
     youtubeId: null,
     featured: true,
   },
   {
-    id: "mr-005",
-    name: "Butter Chicken & Naan Combo",
-    price: 459,
-    category: "combos",
-    protein: "chicken",
-    description: "Classic makhani gravy with two butter naans and raita.",
-    ingredients: ["Chicken", "Tomato", "Cashew", "Butter", "Naan"],
-    image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=800&q=80",
-    badges: ["bestseller"],
-    youtubeId: "9pVTrnr5tVc",
-    featured: true,
-  },
-  {
-    id: "mr-006",
-    name: "Veg Thali Deluxe",
-    price: 349,
-    category: "combos",
+    id: "mc-002",
+    name: "Premium Haldi (Turmeric) Powder",
+    price: 120,
+    category: "powders",
     protein: "veg",
-    description: "Dal, sabzi, rice, roti, pickle, papad, and sweet of the day.",
-    ingredients: ["Seasonal vegetables", "Lentils", "Whole wheat", "Ghee"],
-    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
-    badges: ["veg"],
-    youtubeId: null,
-    featured: false,
-  },
-  {
-    id: "mr-007",
-    name: "Gulab Jamun (2 pcs)",
-    price: 99,
-    category: "desserts",
-    protein: "veg",
-    description: "Warm milk dumplings soaked in cardamom rose syrup.",
-    ingredients: ["Khoya", "Rose water", "Cardamom", "Sugar"],
-    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&q=80",
-    badges: ["new"],
-    youtubeId: null,
-    featured: false,
-  },
-  {
-    id: "mr-008",
-    name: "Masala Dosa",
-    price: 189,
-    category: "starters",
-    protein: "veg",
-    description: "Crispy rice crepe with spiced potato and coconut chutney.",
-    ingredients: ["Rice", "Urad dal", "Potato", "Mustard seeds", "Curry leaves"],
-    image: "https://images.unsplash.com/photo-1668236543090-82eba5ee7dd2?w=800&q=80",
-    badges: ["veg", "spicy"],
-    youtubeId: null,
-    featured: false,
-  },
-  {
-    id: "mr-009",
-    name: "Fish Curry Meal",
-    price: 419,
-    category: "mains",
-    protein: "seafood",
-    description: "Coastal-style curry with steamed rice and salad.",
-    ingredients: ["Fish", "Coconut", "Tamarind", "Curry leaves", "Kokum"],
-    image: "https://images.unsplash.com/photo-1626804475297-416d2b17d00f?w=800&q=80",
-    badges: ["spicy"],
-    youtubeId: null,
-    featured: false,
-  },
-  {
-    id: "mr-010",
-    name: "Family Biryani Bucket",
-    price: 899,
-    category: "combos",
-    protein: "chicken",
-    description: "Serves 3–4: biryani, raita, boiled eggs, and mirchi salan.",
-    ingredients: ["Basmati", "Chicken", "Yogurt", "Spices", "Mint"],
-    image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&q=80",
-    badges: ["bestseller"],
+    description:
+      "Bright, fine-ground turmeric with natural colour and no added preservatives. Ideal for everyday cooking, marinades, and golden milk. Store in a cool, dry place.",
+    ingredients: ["Turmeric"],
+    image: "images/products/mc-27.png",
+    badges: ["natural", "veg"],
     youtubeId: null,
     featured: true,
   },
   {
-    id: "mr-011",
-    name: "Chole Bhature",
-    price: 219,
-    category: "mains",
-    protein: "veg",
-    description: "Punjabi chickpea curry with fluffy fried bread.",
-    ingredients: ["Chickpeas", "Maida", "Tea bag", "Amchur", "Ginger"],
-    image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=800&q=80",
-    badges: ["veg"],
-    youtubeId: null,
-    featured: false,
-  },
-  {
-    id: "mr-012",
-    name: "Kulfi Falooda",
+    id: "mc-003",
+    name: "Kashmiri Red Chili Powder",
     price: 149,
-    category: "desserts",
+    category: "powders",
     protein: "veg",
-    description: "Rose syrup, basil seeds, vermicelli, and pistachio kulfi.",
-    ingredients: ["Milk", "Pistachio", "Rose", "Sabja", "Vermicelli"],
-    image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80",
-    badges: [],
+    description:
+      "Deep red colour with mild heat — perfect for curries, tandoori marinades, and rice. No artificial colours or preservatives; vegetarian.",
+    ingredients: ["Kashmiri red chili"],
+    image: "images/products/mc-06.png",
+    badges: ["natural", "veg"],
+    youtubeId: null,
+    featured: true,
+  },
+  {
+    id: "mc-004",
+    name: "Laal Tikhat (Red Chili) Powder",
+    price: 129,
+    category: "powders",
+    protein: "veg",
+    description:
+      "Finely ground red chili for everyday heat and colour. Natural colour, no preservatives added. A kitchen essential for tadka, gravies, and dry sabzis.",
+    ingredients: ["Red chili"],
+    image: "images/products/mc-04.png",
+    badges: ["spicy", "natural"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-005",
+    name: "Fusion Masala Mix",
+    price: 189,
+    category: "mixes",
+    protein: "veg",
+    description:
+      "Instant masala for both gravy and dry dishes — veg or non-veg. Layered with coriander, cumin, ginger-garlic notes, chilies, and whole spices. Best before six months from packing.",
+    ingredients: ["Coriander", "Cumin", "Chilies", "Cinnamon", "Cloves", "Star anise", "Fennel"],
+    image: "images/products/mc-15.png",
+    badges: ["bestseller", "natural"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-006",
+    name: "Agri Koli Masala",
+    price: 189,
+    category: "blends",
+    protein: "veg",
+    description:
+      "Coastal Maharashtra-style blend with chili, turmeric, mustard, fennel, stone flower, star anise, and more. Bold, aromatic, and perfect for fish and chicken curries.",
+    ingredients: ["Red chili", "Turmeric", "Mustard", "Fennel", "Cloves", "Cinnamon", "Stone flower", "Star anise"],
+    image: "images/products/mc-08.png",
+    badges: ["spicy", "natural"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-007",
+    name: "Goda Masala",
+    price: 179,
+    category: "blends",
+    protein: "veg",
+    description:
+      "Classic Maharashtrian sweet–spicy blend with coriander, sesame, coconut, stone flower, and aromatic whole spices. Ideal for everyday varans, usals, and bhajis.",
+    ingredients: ["Coriander", "Sesame", "Coconut", "Cinnamon", "Cloves", "Black pepper", "Asafoetida"],
+    image: "images/products/mc-13.png",
+    badges: ["veg", "natural"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-008",
+    name: "Slow-Roasted Rajgira Flour",
+    price: 169,
+    category: "flours",
+    protein: "veg",
+    description:
+      "Low-flame roasted amaranth flour for soft rotis and thalipeeth with less cracking. High fibre and calcium, great for fasting recipes — puri, sheera, ladoo, and more.",
+    ingredients: ["Rajgira (amaranth)"],
+    image: "images/products/mc-17.png",
+    badges: ["bestseller", "natural"],
+    youtubeId: null,
+    featured: true,
+  },
+  {
+    id: "mc-009",
+    name: "Kaddhanye Thalipith Bhajani",
+    price: 199,
+    category: "flours",
+    protein: "veg",
+    description:
+      "High-protein multigrain bhajani with millets and pulses — no preservatives. Use for thalipith, dhapate, uttappa, and paratha. Great for a fibre-rich, wholesome meal.",
+    ingredients: ["Mixed millets", "Grains", "Pulses", "Spices"],
+    image: "images/products/mc-02.png",
+    badges: ["natural", "veg"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-010",
+    name: "Traditional Thalipith Bhajani",
+    price: 169,
+    category: "flours",
+    protein: "veg",
+    description:
+      "Hand-picked grains roasted and ground for authentic thalipith, dhapate, paratha, and spiced flatbreads. Homestyle taste with dietary fibre in every bite.",
+    ingredients: ["Mixed grains", "Lentils", "Spices"],
+    image: "images/products/mc-18.png",
+    badges: ["veg", "natural"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-011",
+    name: "Premium Modak Flour (3-Rice Blend)",
+    price: 219,
+    category: "flours",
+    protein: "veg",
+    description:
+      "Fragrant modak flour blended from Indrayani, Basmati, and Ambemohar rice — soft dough, easy pleating, traditional ukadiche modak at home. No added preservatives.",
+    ingredients: ["Indrayani rice", "Basmati rice", "Ambemohar rice"],
+    image: "images/products/mc-03.png",
+    badges: ["bestseller", "veg"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-012",
+    name: "Malwani Vade Mix",
+    price: 149,
+    category: "mixes",
+    protein: "veg",
+    description:
+      "Authentic Kokan-style mix for puffed malwani vade — rich flavour and less oil absorption. Pair with spicy coastal curries and sol kadhi.",
+    ingredients: ["Rice", "Lentils", "Black pepper", "Spices"],
+    image: "images/products/mc-22.png",
+    badges: ["natural", "veg"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-013",
+    name: "Upwas Bhajani (Fasting Mix)",
+    price: 89,
+    category: "mixes",
+    protein: "veg",
+    description:
+      "Roasted fasting flour with bhagar, sabudana, rajgira, and cumin — perfect for crispy upwas thalipeeth and vrat-friendly snacks.",
+    ingredients: ["Bhagar (barnyard millet)", "Sabudana", "Rajgira", "Cumin"],
+    image: "images/products/mc-26.png",
+    badges: ["veg", "natural"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-014",
+    name: "Ghavan Flour (Instant Breakfast)",
+    price: 170,
+    category: "flours",
+    protein: "veg",
+    description:
+      "Fine flour for thin, soft ghavan (savoury rice crepes) — quick breakfast or light dinner. Vegetarian; great with coconut chutney.",
+    ingredients: ["Rice", "Lentils", "Salt"],
+    image: "images/products/mc-20.png",
+    badges: ["veg", "new"],
+    youtubeId: null,
+    featured: false,
+  },
+  {
+    id: "mc-015",
+    name: "Nachni Sattva (Sprouted Ragi)",
+    price: 100,
+    category: "flours",
+    protein: "veg",
+    description:
+      "Traditional finger millet (nachni) malt-style flour — iron-rich and naturally nutritious. Use for amboli, porridge, and health-forward recipes.",
+    ingredients: ["Sprouted finger millet (ragi)"],
+    image: "images/products/mc-21.png",
+    badges: ["natural", "veg"],
     youtubeId: null,
     featured: false,
   },
@@ -182,6 +236,7 @@ const BADGE_STYLES = {
   spicy: "bg-chili-600 text-white",
   new: "bg-fresh-600 text-white",
   veg: "bg-fresh-700 text-white",
+  natural: "bg-emerald-700 text-white",
 };
 
 /** @returns {Record<string, number>} */
@@ -284,7 +339,7 @@ function whatsappOrderLink() {
           "",
           "Please confirm availability and delivery time.",
         ].join("\n")
-      : `Hi ${BUSINESS.name}! I'd like to order food. Please share today's specials.`;
+      : `Hi ${BUSINESS.name}! I'd like to place an order for spices and flour mixes. Please share availability and MRP.`;
   const phone = whatsappPhoneDigits();
   return `https://wa.me/${phone}?text=${encodeURIComponent(body)}`;
 }
@@ -314,7 +369,7 @@ function productCardHtml(product, opts = {}) {
   return `
     <article class="group product-card bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden border border-amber-100/80 transition-all duration-300 hover:-translate-y-1">
       <a href="product.html?id=${encodeURIComponent(product.id)}" class="block relative aspect-[4/3] overflow-hidden bg-cream-200">
-        <img src="${escapeHtml(product.image)}" alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="800" height="600">
+        <img src="${escapeHtml(product.image)}" alt="" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" width="800" height="600">
         <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">${badges}</div>
       </a>
       <div class="p-4 ${compact ? "pb-3" : ""}">
@@ -360,8 +415,8 @@ function searchProducts(query) {
   );
 }
 
-/** @param {string|null} cat starters|mains|combos|desserts */
-/** @param {string|null} protein chicken|veg|seafood */
+/** @param {string|null} cat powders|blends|flours|mixes */
+/** @param {string|null} protein legacy filter (veg) — optional */
 function filterProducts(cat, protein) {
   let list = PRODUCTS;
   if (cat && cat !== "all") list = list.filter((p) => p.category === cat);
@@ -389,7 +444,7 @@ function injectHeaderFooter() {
       </a>
       <div class="hidden md:flex items-center gap-1">
         <a href="index.html" class="nav-link px-3 py-2 rounded-lg text-stone-700 hover:bg-turmeric-500/15 font-medium ${active === "home" ? "bg-turmeric-500/20 text-chili-800" : ""}">Home</a>
-        <a href="menu.html" class="nav-link px-3 py-2 rounded-lg text-stone-700 hover:bg-turmeric-500/15 font-medium ${active === "menu" ? "bg-turmeric-500/20 text-chili-800" : ""}">Menu</a>
+        <a href="menu.html" class="nav-link px-3 py-2 rounded-lg text-stone-700 hover:bg-turmeric-500/15 font-medium ${active === "menu" ? "bg-turmeric-500/20 text-chili-800" : ""}">Shop</a>
         <a href="categories.html" class="nav-link px-3 py-2 rounded-lg text-stone-700 hover:bg-turmeric-500/15 font-medium ${active === "categories" ? "bg-turmeric-500/20 text-chili-800" : ""}">Categories</a>
         <a href="contact.html" class="nav-link px-3 py-2 rounded-lg text-stone-700 hover:bg-turmeric-500/15 font-medium ${active === "contact" ? "bg-turmeric-500/20 text-chili-800" : ""}">Contact</a>
       </div>
@@ -405,7 +460,7 @@ function injectHeaderFooter() {
     </nav>
     <div id="mobile-nav" class="hidden md:hidden border-t border-amber-200/60 bg-cream-100 px-4 py-3 space-y-1">
       <a href="index.html" class="block py-2 px-3 rounded-lg font-medium ${active === "home" ? "bg-turmeric-500/25 text-chili-800" : "text-stone-700"}">Home</a>
-      <a href="menu.html" class="block py-2 px-3 rounded-lg font-medium ${active === "menu" ? "bg-turmeric-500/25 text-chili-800" : "text-stone-700"}">Menu</a>
+      <a href="menu.html" class="block py-2 px-3 rounded-lg font-medium ${active === "menu" ? "bg-turmeric-500/25 text-chili-800" : "text-stone-700"}">Shop</a>
       <a href="categories.html" class="block py-2 px-3 rounded-lg font-medium ${active === "categories" ? "bg-turmeric-500/25 text-chili-800" : "text-stone-700"}">Categories</a>
       <a href="contact.html" class="block py-2 px-3 rounded-lg font-medium ${active === "contact" ? "bg-turmeric-500/25 text-chili-800" : "text-stone-700"}">Contact</a>
     </div>
@@ -420,12 +475,12 @@ function injectHeaderFooter() {
           <img src="images/logo.svg" alt="" class="h-10 w-10 rounded-xl" width="40" height="40">
           <span class="font-bold text-xl">${escapeHtml(BUSINESS.name)}</span>
         </div>
-        <p class="text-amber-100/80 text-sm leading-relaxed">Premium Indian flavors — crafted for delivery and pickup. Order on WhatsApp in one tap.</p>
+        <p class="text-amber-100/80 text-sm leading-relaxed">Premium spices, masalas, and flours — order on WhatsApp in one tap.</p>
       </div>
       <div>
         <h3 class="font-bold text-turmeric-400 mb-3">Quick links</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="menu.html" class="hover:text-white transition-colors">Full menu</a></li>
+          <li><a href="menu.html" class="hover:text-white transition-colors">Full shop</a></li>
           <li><a href="categories.html" class="hover:text-white transition-colors">Categories</a></li>
           <li><a href="cart.html" class="hover:text-white transition-colors">Cart</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
