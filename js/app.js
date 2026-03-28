@@ -7,8 +7,8 @@
 const BUSINESS = {
   name: "MumbaiClove",
   whatsappCountryCode: "91", // India; no +
-  whatsappNumber: "9224719600", // Replace with your number (digits only)
-  phoneDisplay: "+91 9224719600",
+  whatsappNumber: "9224471960", // Replace with your number (digits only)
+  phoneDisplay: "+91 9224471960",
   address: "601 Himalay Apartment, chendani koliwada, Thane east mumbai 400603",
   email: "",
   upiId: "vaishalikoli10@okaxis",
