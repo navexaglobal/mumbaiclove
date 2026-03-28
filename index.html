@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MasalaRoute — Order Premium Indian Food</title>
+  <meta name="description" content="Order chef-crafted Indian food for delivery. Starters, mains, combos & desserts.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            turmeric: { 400: "#F5CC2E", 500: "#EFBF04", 600: "#D4A800" },
+            chili: { 600: "#8B0000", 700: "#6B0000", 800: "#4A0000", 900: "#2D0A0A", 950: "#1a0505" },
+            fresh: { 500: "#43A047", 600: "#2E7D32", 700: "#1B5E20" },
+            cream: { 100: "#FFF8E1", 200: "#FFECB3" },
+          },
+          fontFamily: {
+            sans: ["DM Sans", "system-ui", "sans-serif"],
+            display: ["Outfit", "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .bg-spice-texture {
+      background-color: #FFF8E1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23a)' opacity='0.05'/%3E%3C/svg%3E");
+    }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .animate-floaty { animation: floaty 5s ease-in-out infinite; }
+    @keyframes loader-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(0.96); } }
+    .loader-dot { animation: loader-pulse 1s ease-in-out infinite; }
+    .loader-dot:nth-child(2) { animation-delay: 0.15s; }
+    .loader-dot:nth-child(3) { animation-delay: 0.3s; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-stone-800 bg-spice-texture" data-nav-active="home">
+  <!-- Full-screen loader -->
+  <div id="page-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-cream-100 transition-opacity duration-500">
+    <div class="flex gap-2 mb-4">
+      <span class="loader-dot w-3 h-3 rounded-full bg-turmeric-500"></span>
+      <span class="loader-dot w-3 h-3 rounded-full bg-orange-500"></span>
+      <span class="loader-dot w-3 h-3 rounded-full bg-chili-600"></span>
+    </div>
+    <p class="font-display font-bold text-chili-800 tracking-wide">Serving something delicious…</p>
+  </div>
+
+  <div id="site-header"></div>
+
+  <main class="flex-1">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-turmeric-500/30 via-orange-500/20 to-chili-600/25"></div>
+      <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-turmeric-400/40 blur-3xl"></div>
+      <div class="absolute -left-16 bottom-0 w-64 h-64 rounded-full bg-chili-600/20 blur-3xl"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center relative">
+        <div class="animate-floaty md:animate-none">
+          <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-amber-200 text-chili-700 text-sm font-semibold shadow-sm mb-4">
+            <span class="w-2 h-2 rounded-full bg-fresh-600 animate-pulse"></span> Live kitchen · Fast delivery
+          </p>
+          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] text-chili-900">
+            Spice-forward flavors,
+            <span class="bg-gradient-to-r from-turmeric-600 via-orange-500 to-chili-600 bg-clip-text text-transparent">delivered hot.</span>
+          </h1>
+          <p class="mt-5 text-lg text-stone-600 max-w-xl leading-relaxed">Premium Indian plates inspired by street stalls and home kitchens — curated for people who love bold masala, fresh herbs, and honest portions.</p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="menu.html" class="inline-flex items-center justify-center px-8 py-3.5 rounded-2xl font-bold text-chili-950 bg-gradient-to-r from-turmeric-500 to-orange-500 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">Order Now</a>
+            <a href="#categories" class="inline-flex items-center justify-center px-8 py-3.5 rounded-2xl font-bold border-2 border-chili-700 text-chili-800 hover:bg-chili-700 hover:text-white transition-all duration-300">Explore categories</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/60 rotate-1 hover:rotate-0 transition-transform duration-500">
+            <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1200&q=80" alt="Indian food spread" class="w-full h-full object-cover" width="800" height="600">
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-4 py-3 border border-amber-100 flex items-center gap-3">
+            <span class="text-2xl" aria-hidden="true">⭐</span>
+            <div>
+              <p class="font-bold text-chili-800">4.9 / 5</p>
+              <p class="text-xs text-stone-500">2k+ happy orders</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured dishes -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-chili-900">Featured dishes</h2>
+          <p class="text-stone-600 mt-2">Hand-picked by our chefs — maximum flavor per bite.</p>
+        </div>
+        <a href="menu.html" class="text-chili-700 font-bold hover:text-chili-600 transition-colors">View full menu →</a>
+      </div>
+      <div id="featured-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- YouTube promo -->
+    <section class="py-16 bg-gradient-to-r from-chili-900 via-chili-800 to-orange-900 text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 bg-spice-texture"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-turmeric-400">See the kitchen in action</h2>
+          <p class="mt-4 text-amber-100/90 leading-relaxed">From tandoor smoke to finishing tadka — watch how we plate your favorites with restaurant discipline and homestyle soul.</p>
+          <ul class="mt-6 space-y-2 text-sm text-amber-50/90">
+            <li class="flex gap-2"><span class="text-turmeric-400">✓</span> Hygienic prep · temperature logs</li>
+            <li class="flex gap-2"><span class="text-turmeric-400">✓</span> Premium oils & whole spices</li>
+            <li class="flex gap-2"><span class="text-turmeric-400">✓</span> Packaging that travels well</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-2xl ring-2 ring-turmeric-500/40 aspect-video bg-black">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/9pVTrnr5tVc" title="MasalaRoute kitchen promo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category highlights -->
+    <section id="categories" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-chili-900 text-center mb-4">Browse by craving</h2>
+      <p class="text-center text-stone-600 mb-12 max-w-2xl mx-auto">Starters to sweets — jump straight into what you are hungry for.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="menu.html?category=starters" class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-amber-100 bg-white">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="375">
+          </div>
+          <div class="p-5 bg-gradient-to-t from-cream-100 to-white">
+            <h3 class="font-display font-bold text-xl text-chili-800">Starters</h3>
+            <p class="text-sm text-stone-600 mt-1">Tikka, kebabs & more</p>
+          </div>
+        </a>
+        <a href="menu.html?category=mains" class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-amber-100 bg-white">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1563379091339-03246963d4b7?w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="375">
+          </div>
+          <div class="p-5 bg-gradient-to-t from-cream-100 to-white">
+            <h3 class="font-display font-bold text-xl text-chili-800">Main course</h3>
+            <p class="text-sm text-stone-600 mt-1">Curries, rice & breads</p>
+          </div>
+        </a>
+        <a href="menu.html?category=combos" class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-amber-100 bg-white">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="375">
+          </div>
+          <div class="p-5 bg-gradient-to-t from-cream-100 to-white">
+            <h3 class="font-display font-bold text-xl text-chili-800">Combos</h3>
+            <p class="text-sm text-stone-600 mt-1">Complete meals, best value</p>
+          </div>
+        </a>
+        <a href="menu.html?category=desserts" class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-amber-100 bg-white">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="375">
+          </div>
+          <div class="p-5 bg-gradient-to-t from-cream-100 to-white">
+            <h3 class="font-display font-bold text-xl text-chili-800">Desserts</h3>
+            <p class="text-sm text-stone-600 mt-1">Sweet endings</p>
+          </div>
+        </a>
+      </div>
+      <p class="text-center mt-10">
+        <a href="categories.html" class="font-bold text-fresh-700 hover:text-fresh-600">More filters: Chicken · Veg · Combos →</a>
+      </p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white/70 border-y border-amber-100">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="font-display text-3xl font-bold text-chili-900 text-center mb-12">What foodies say</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <blockquote class="rounded-2xl bg-cream-100 p-6 shadow-md border border-amber-100/80 hover:shadow-lg transition-shadow">
+            <p class="text-stone-700 leading-relaxed">“Biryani was fragrant and every grain separate. Packaging stayed warm for 40 minutes — impressed.”</p>
+            <footer class="mt-4 font-bold text-chili-800">— Ananya K.</footer>
+          </blockquote>
+          <blockquote class="rounded-2xl bg-cream-100 p-6 shadow-md border border-amber-100/80 hover:shadow-lg transition-shadow">
+            <p class="text-stone-700 leading-relaxed">“Butter chicken + naan combo hits the spot. Feels like a premium cloud kitchen, not generic takeout.”</p>
+            <footer class="mt-4 font-bold text-chili-800">— Rahul M.</footer>
+          </blockquote>
+          <blockquote class="rounded-2xl bg-cream-100 p-6 shadow-md border border-amber-100/80 hover:shadow-lg transition-shadow">
+            <p class="text-stone-700 leading-relaxed">“Ordering on WhatsApp was smooth. They confirmed spice level and ETA in minutes.”</p>
+            <footer class="mt-4 font-bold text-chili-800">— Priya S.</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp CTA -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <div class="rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+        <div class="md:w-1/2 bg-gradient-to-br from-fresh-600 to-fresh-700 p-10 md:p-12 text-white flex flex-col justify-center">
+          <h2 class="font-display text-3xl font-bold">Order on WhatsApp</h2>
+          <p class="mt-3 text-white/90 leading-relaxed">Tap below to chat with us. Share your address, preferred time, and we will confirm your cart total.</p>
+          <a id="home-wa-cta" href="#" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white text-fresh-800 font-bold shadow-lg hover:bg-cream-100 transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat & order
+          </a>
+        </div>
+        <div class="md:w-1/2 bg-cream-100 p-10 md:p-12 flex flex-col justify-center border-t md:border-t-0 md:border-l border-amber-200">
+          <h3 class="font-display font-bold text-xl text-chili-900">Pay with UPI</h3>
+          <p class="text-stone-600 text-sm mt-2">After we confirm your order on WhatsApp, pay via UPI and send us the screenshot for faster kitchen queue.</p>
+          <div class="mt-6 flex justify-center">
+            <img src="images/upi-qr-placeholder.svg" alt="UPI QR placeholder — replace with your QR" class="w-40 h-40 rounded-xl border-2 border-amber-200 shadow-md bg-white" width="160" height="160">
+          </div>
+          <p class="text-center text-xs text-chili-700 font-semibold mt-3" id="home-upi-id">UPI: loading…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/app.js"></script>
+  <script>
+    function bootHome() {
+      const { PRODUCTS, productCardHtml, bindAddToCart, whatsappOrderLink, BUSINESS } = window.MasalaApp;
+      const featured = PRODUCTS.filter((p) => p.featured).slice(0, 4);
+      const grid = document.getElementById("featured-grid");
+      if (grid) {
+        grid.innerHTML = featured.map((p) => productCardHtml(p, { compact: true })).join("");
+        bindAddToCart(grid);
+      }
+      const wa = document.getElementById("home-wa-cta");
+      if (wa) wa.href = whatsappOrderLink();
+      const upi = document.getElementById("home-upi-id");
+      if (upi) upi.textContent = "UPI: " + BUSINESS.upiId;
+      document.addEventListener("masalaCartUpdated", () => {
+        if (wa) wa.href = whatsappOrderLink();
+      });
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", bootHome);
+    } else {
+      bootHome();
+    }
+  </script>
+</body>
+</html>
