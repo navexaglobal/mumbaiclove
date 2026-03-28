@@ -1,16 +1,16 @@
 /**
- * MasalaRoute — static food commerce
+ * MumbaiClove — static food commerce
  * Cart: localStorage key "masalaCart"
  * Configure business constants below for your deployment.
  */
 
 const BUSINESS = {
-  name: "MasalaRoute",
+  name: "MumbaiClove",
   whatsappCountryCode: "91", // India; no +
   whatsappNumber: "9876543210", // Replace with your number (digits only)
   phoneDisplay: "+91 98765 43210",
   address: "12 Spice Market Lane, Connaught Place, New Delhi 110001",
-  email: "hello@masalaroute.example",
+  email: "hello@mumbaiclove.example",
   upiId: "yourname@paytm", // Replace with your UPI ID
 };
 
@@ -474,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Export for inline page scripts
-window.MasalaApp = {
+window.MumbaiCloveApp = {
   BUSINESS,
   PRODUCTS,
   getCart,

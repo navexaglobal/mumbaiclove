@@ -39,6 +39,19 @@
     .loader-dot { animation: loader-pulse 1s ease-in-out infinite; }
     .loader-dot:nth-child(2) { animation-delay: 0.15s; }
     .loader-dot:nth-child(3) { animation-delay: 0.3s; }
+    .spice-promo-strip {
+      background-color: #FF6A13;
+      color: #000000;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .spice-promo-body {
+      background-color: #FF6A13;
+      color: #000000;
+      padding: 0.12em 0.28em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col font-sans text-stone-800 bg-spice-texture" data-nav-active="home">
@@ -90,6 +103,36 @@
       </div>
     </section>
 
+    <!-- Spices story (orange highlight strips) -->
+    <section class="relative overflow-hidden py-16 md:py-24" aria-labelledby="spice-promo-heading">
+      <div class="absolute inset-0 pointer-events-none">
+        <img
+          src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1920&q=80"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover scale-105 blur-md"
+          width="1920"
+          height="1080"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="absolute inset-0 bg-black/55"></div>
+      </div>
+      <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-left">
+        <p class="inline-block font-bold text-sm sm:text-base spice-promo-strip px-2 py-1 mb-4">
+          Pure Indian Spices for Global Taste
+        </p>
+        <h2 id="spice-promo-heading" class="font-display font-extrabold leading-tight tracking-tight">
+          <span class="block w-fit max-w-full text-3xl sm:text-4xl md:text-5xl spice-promo-strip px-2 py-1 mb-1">Spices The aroma and the</span>
+          <span class="block w-fit max-w-full text-3xl sm:text-4xl md:text-5xl spice-promo-strip px-2 py-1">soul of India !</span>
+        </h2>
+        <p class="mt-6 text-base sm:text-lg font-sans font-normal leading-relaxed max-w-xl">
+          <span class="spice-promo-body">
+            India’s unique taste comes from its rich blend of spices – each adding warmth, color, and character. Together, they create a flavor that’s bold, soulful, and unmistakably Indian.
+          </span>
+        </p>
+      </div>
+    </section>
+
     <!-- Featured dishes -->
     <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
@@ -116,7 +159,7 @@
           </ul>
         </div>
         <div class="rounded-2xl overflow-hidden shadow-2xl ring-2 ring-turmeric-500/40 aspect-video bg-black">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/9pVTrnr5tVc" title="MasalaRoute kitchen promo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/9pVTrnr5tVc" title="MumbaiClove kitchen promo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -217,7 +260,7 @@
   <script src="js/app.js"></script>
   <script>
     function bootHome() {
-      const { PRODUCTS, productCardHtml, bindAddToCart, whatsappOrderLink, BUSINESS } = window.MasalaApp;
+      const { PRODUCTS, productCardHtml, bindAddToCart, whatsappOrderLink, BUSINESS } = window.MumbaiCloveApp;
       const featured = PRODUCTS.filter((p) => p.featured).slice(0, 4);
       const grid = document.getElementById("featured-grid");
       if (grid) {

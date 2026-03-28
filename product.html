@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product — MasalaRoute</title>
+  <title>Product — MumbaiClove</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,7 +101,7 @@
         addToCart,
         renderBadges,
         escapeHtml,
-      } = window.MasalaApp;
+      } = window.MumbaiCloveApp;
 
       const id = getQueryParam("id");
       const product = PRODUCTS.find((p) => p.id === id);
@@ -119,7 +119,7 @@
 
       document.getElementById("pd-img").src = product.image;
       document.getElementById("pd-img").alt = product.name;
-      document.title = product.name + " — MasalaRoute";
+      document.title = product.name + " — MumbaiClove";
       document.getElementById("pd-title").textContent = product.name;
       document.getElementById("pd-price").textContent = "₹" + product.price;
       document.getElementById("pd-desc").textContent = product.description;
