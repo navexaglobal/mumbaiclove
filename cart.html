@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — MasalaRoute</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            turmeric: { 400: "#F5CC2E", 500: "#EFBF04", 600: "#D4A800" },
+            chili: { 600: "#8B0000", 700: "#6B0000", 800: "#4A0000", 900: "#2D0A0A", 950: "#1a0505" },
+            fresh: { 500: "#43A047", 600: "#2E7D32", 700: "#1B5E20" },
+            cream: { 100: "#FFF8E1", 200: "#FFECB3" },
+          },
+          fontFamily: {
+            sans: ["DM Sans", "system-ui", "sans-serif"],
+            display: ["Outfit", "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .bg-spice-texture {
+      background-color: #FFF8E1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23a)' opacity='0.05'/%3E%3C/svg%3E");
+    }
+    @keyframes loader-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(0.96); } }
+    .loader-dot { animation: loader-pulse 1s ease-in-out infinite; }
+    .loader-dot:nth-child(2) { animation-delay: 0.15s; }
+    .loader-dot:nth-child(3) { animation-delay: 0.3s; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-stone-800 bg-spice-texture" data-nav-active="menu">
+  <div id="page-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-cream-100 transition-opacity duration-500">
+    <div class="flex gap-2 mb-4">
+      <span class="loader-dot w-3 h-3 rounded-full bg-turmeric-500"></span>
+      <span class="loader-dot w-3 h-3 rounded-full bg-orange-500"></span>
+      <span class="loader-dot w-3 h-3 rounded-full bg-chili-600"></span>
+    </div>
+    <p class="font-display font-bold text-chili-800">Loading cart…</p>
+  </div>
+
+  <div id="site-header"></div>
+
+  <main class="flex-1 max-w-3xl mx-auto px-4 sm:px-6 py-10 w-full">
+    <h1 class="font-display text-4xl font-extrabold text-chili-900">Your cart</h1>
+    <p class="text-stone-600 mt-2">Adjust quantities, then send the order to us on WhatsApp.</p>
+
+    <div id="cart-empty" class="hidden mt-12 text-center py-16 rounded-3xl bg-white border border-amber-100 shadow-md">
+      <p class="text-lg font-semibold text-chili-800">Your cart is empty</p>
+      <a href="menu.html" class="mt-6 inline-flex px-8 py-3 rounded-2xl font-bold bg-gradient-to-r from-turmeric-500 to-orange-500 text-chili-950 shadow-md hover:shadow-lg transition-all">Browse menu</a>
+    </div>
+
+    <div id="cart-filled" class="hidden mt-8 space-y-4">
+      <ul id="cart-lines" class="space-y-4"></ul>
+
+      <div class="rounded-3xl bg-white border border-amber-100 shadow-lg p-6 mt-8">
+        <div class="flex justify-between items-center text-lg">
+          <span class="font-semibold text-stone-600">Total</span>
+          <span id="cart-total" class="font-display text-3xl font-extrabold text-chili-800"></span>
+        </div>
+        <a id="cart-wa" href="#" class="mt-6 w-full flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold bg-fresh-600 text-white shadow-lg hover:bg-fresh-500 transition-colors">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Order via WhatsApp
+        </a>
+      </div>
+
+      <!-- UPI block -->
+      <div class="rounded-3xl bg-gradient-to-br from-chili-900 to-chili-950 text-amber-50 p-6 md:p-8 shadow-xl border border-chili-700">
+        <h2 class="font-display text-xl font-bold text-turmeric-400">Pay with UPI</h2>
+        <p class="text-sm text-amber-100/85 mt-2 leading-relaxed">Scan the QR below or pay to our UPI ID. After payment, send the screenshot on WhatsApp so we can confirm and fire your order in the kitchen.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-6 items-center">
+          <img src="images/upi-qr-placeholder.svg" alt="UPI QR — replace with your static QR image" class="w-44 h-44 rounded-xl bg-white p-2 shadow-lg" width="176" height="176">
+          <div class="text-sm space-y-2">
+            <p><span class="text-turmeric-400 font-bold">UPI ID:</span> <span id="cart-upi-id"></span></p>
+            <p class="text-amber-200/70">Replace <code class="bg-white/10 px-1 rounded">images/upi-qr-placeholder.svg</code> with your exported PNG/SVG QR for best results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/app.js"></script>
+  <script>
+    function bootCart() {
+      const {
+        PRODUCTS,
+        getCart,
+        setCartQuantity,
+        getCartTotal,
+        whatsappOrderLink,
+        BUSINESS,
+        escapeHtml,
+      } = window.MasalaApp;
+
+      const emptyEl = document.getElementById("cart-empty");
+      const filledEl = document.getElementById("cart-filled");
+      const linesEl = document.getElementById("cart-lines");
+      const totalEl = document.getElementById("cart-total");
+      const waEl = document.getElementById("cart-wa");
+      const upiEl = document.getElementById("cart-upi-id");
+
+      function render() {
+        const cart = getCart();
+        const entries = Object.entries(cart).filter(([, q]) => q > 0);
+        if (entries.length === 0) {
+          emptyEl.classList.remove("hidden");
+          filledEl.classList.add("hidden");
+          return;
+        }
+        emptyEl.classList.add("hidden");
+        filledEl.classList.remove("hidden");
+
+        let html = "";
+        for (const [pid, qty] of entries) {
+          const p = PRODUCTS.find((x) => x.id === pid);
+          if (!p) continue;
+          const line = p.price * qty;
+          html += `
+            <li class="flex gap-4 p-4 rounded-2xl bg-white border border-amber-100 shadow-sm hover:shadow-md transition-shadow">
+              <a href="product.html?id=${encodeURIComponent(p.id)}" class="shrink-0 w-24 h-24 rounded-xl overflow-hidden ring-2 ring-amber-100">
+                <img src="${escapeHtml(p.image)}" alt="" class="w-full h-full object-cover" width="96" height="96">
+              </a>
+              <div class="flex-1 min-w-0">
+                <a href="product.html?id=${encodeURIComponent(p.id)}" class="font-bold text-chili-900 hover:text-chili-700">${escapeHtml(p.name)}</a>
+                <p class="text-sm text-stone-500 mt-0.5">₹${p.price} each · <span class="font-semibold text-chili-700">₹${line}</span></p>
+                <div class="flex items-center gap-2 mt-3">
+                  <button type="button" data-qty-minus="${escapeHtml(p.id)}" class="w-9 h-9 rounded-lg border-2 border-amber-200 font-bold hover:bg-amber-50 transition-colors" aria-label="Decrease">−</button>
+                  <span class="w-8 text-center font-bold">${qty}</span>
+                  <button type="button" data-qty-plus="${escapeHtml(p.id)}" class="w-9 h-9 rounded-lg border-2 border-amber-200 font-bold hover:bg-amber-50 transition-colors" aria-label="Increase">+</button>
+                </div>
+              </div>
+            </li>`;
+        }
+        linesEl.innerHTML = html;
+        totalEl.textContent = "₹" + getCartTotal();
+        waEl.href = whatsappOrderLink();
+        if (upiEl) upiEl.textContent = BUSINESS.upiId;
+
+        linesEl.querySelectorAll("[data-qty-minus]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-qty-minus");
+            const cart = getCart();
+            setCartQuantity(id, (cart[id] || 0) - 1);
+            render();
+          });
+        });
+        linesEl.querySelectorAll("[data-qty-plus]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-qty-plus");
+            const cart = getCart();
+            setCartQuantity(id, (cart[id] || 0) + 1);
+            render();
+          });
+        });
+      }
+
+      render();
+      document.addEventListener("masalaCartUpdated", render);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", bootCart);
+    } else {
+      bootCart();
+    }
+  </script>
+</body>
+</html>
