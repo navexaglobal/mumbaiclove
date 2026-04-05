@@ -19,7 +19,7 @@ const PRODUCTS = [
   {
     id: "mc-001",
     name: "Authentic Garam Masala",
-    price: 199,
+    price: 301.35,
     category: "blends",
     protein: "veg",
     description:
@@ -33,7 +33,7 @@ const PRODUCTS = [
   {
     id: "mc-002",
     name: "Premium Haldi (Turmeric) Powder",
-    price: 120,
+    price: 122.85,
     category: "powders",
     protein: "veg",
     description:
@@ -47,7 +47,7 @@ const PRODUCTS = [
   {
     id: "mc-003",
     name: "Kashmiri Red Chili Powder",
-    price: 149,
+    price: 233.1,
     category: "powders",
     protein: "veg",
     description:
@@ -61,7 +61,7 @@ const PRODUCTS = [
   {
     id: "mc-004",
     name: "Laal Tikhat (Red Chili) Powder",
-    price: 129,
+    price: 212.1,
     category: "powders",
     protein: "veg",
     description:
@@ -75,7 +75,7 @@ const PRODUCTS = [
   {
     id: "mc-005",
     name: "Fusion Masala Mix",
-    price: 189,
+    price: 301.35,
     category: "mixes",
     protein: "veg",
     description:
@@ -89,7 +89,7 @@ const PRODUCTS = [
   {
     id: "mc-006",
     name: "Agri Koli Masala",
-    price: 189,
+    price: 271.95,
     category: "blends",
     protein: "veg",
     description:
@@ -103,7 +103,7 @@ const PRODUCTS = [
   {
     id: "mc-007",
     name: "Goda Masala",
-    price: 179,
+    price: 233.1,
     category: "blends",
     protein: "veg",
     description:
